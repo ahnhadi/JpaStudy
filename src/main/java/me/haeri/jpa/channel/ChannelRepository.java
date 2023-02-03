@@ -1,10 +1,10 @@
 package me.haeri.jpa.channel;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-@Repository
-public interface ChannelRepository extends JpaRepository<Channel, Long> {
+public interface ChannelRepository extends JpaRepository<Channel, Long>,
+    QuerydslPredicateExecutor<Channel> {
 
 }
 
@@ -14,11 +14,12 @@ public interface ChannelRepository extends JpaRepository<Channel, Long> {
 //  @PersistenceContext
 //  EntityManager entityManager;
 //
-//  public Channel insertChannel(Channel channel){
+//  public Channel save(Channel channel) {
 //    entityManager.persist(channel);
 //    return channel;
 //  }
 //
-//  public Channel selectChannel(Long id){
+//  public Channel findById(Long id) {
 //    return entityManager.find(Channel.class, id);
 //  }
+//}

@@ -49,5 +49,4 @@ public class MyUserRepositoryTest {
     Assertions.assertThat(
         userNameList.containsAll(List.of(newUser1.getUsername(), newUser2.getUsername())));
   }
-
 }
