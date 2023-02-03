@@ -1,21 +1,9 @@
 package me.haeri.jpa.userChannel;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserChannelRepository {
+public interface UserChannelRepository extends JpaRepository<UserChannel, Long> {
 
-    @PersistenceContext
-    EntityManager entityManager;
-
-    public UserChannel insertUserChannel(UserChannel userChannel){
-        entityManager.persist(userChannel);
-        return userChannel;
-    }
-
-    public UserChannel selectUserChannel(Long id){
-        return entityManager.find(UserChannel.class, id);
-    }
 }
